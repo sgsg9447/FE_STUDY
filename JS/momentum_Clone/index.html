@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sseul's_Momentum</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <form id="login-form" class="hidden">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <input type="submit" value="Log In" />
+    </form>
+    <div class="main-box">
+      <div class="clockAndName">
+        <h2 id="clock">00:00</h2>
+        <h1 id="greeting" class="hidden"></h1>
+      </div>
+      <form id="todo-form">
+        <p>"What is your main focus for today??"</p>
+        <input type="text" required />
+      </form>
+      <ul id="todo-list"></ul>
+    </div>
+    <div id="quote"><span></span><br /><span></span></div>
+    <div id="weather"><span></span><span></span></div>
+    <script src="./JS/greetings.js"></script>
+    <script src="./JS/clock.js"></script>
+    <script src="./JS/quotes.js"></script>
+    <script src="./JS/background.js"></script>
+    <script src="./JS/todo.js"></script>
+    <script src="./JS/weather.js"></script>
+  </body>
+</html>

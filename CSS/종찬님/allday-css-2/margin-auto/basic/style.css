@@ -1,0 +1,23 @@
+.item {
+  background-color: orange;
+  /* width: 50%; */
+  height: auto;
+  padding: 40px;
+  /* box-sizing: border-box;
+  만약 이걸 못쓴다면 ? ie 문제로!! */
+  /* width: calc(50% - 100px);
+  하지만 이것도 ie 문제가있다! */
+  /* ****부모에 width : 50% 자식에 오토!!!**** */
+}
+
+.item:nth-child(odd) {
+  margin-left: 50%;
+}
+
+.item:nth-child(even) {
+  margin-right: 50%;
+}
+
+/* .item-inside {
+  padding: 50%;
+} */

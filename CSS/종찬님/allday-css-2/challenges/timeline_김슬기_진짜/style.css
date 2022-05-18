@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #222;
+}
+
+ul li {
+  line-height: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 628px;
+  background-image: url(./images/cover.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+}
+
+.title-box {
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.title-main {
+  position: relative;
+  letter-spacing: 10px;
+  z-index: 1;
+}
+
+.title-main::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: -3px 0 0 -10px;
+  height: 6px;
+  background-color: dodgerblue;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  margin-top: 130px;
+  background-color: dodgerblue;
+  transform: translateX(-50%);
+}
+
+.card {
+  position: relative;
+  padding: 44px 30px 0;
+
+  border-radius: 20px;
+  background-color: #111;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #111;
+}
+
+.card-img {
+  position: absolute;
+  width: 115px;
+}
+
+.card-year {
+  font-size: 64px;
+  color: dodgerblue;
+}
+
+.card-name {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.card-name::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #222;
+  border: 3px solid dodgerblue;
+  border-radius: 50%;
+}
+
+.card ul {
+  background-color: #000;
+  border-radius: 20px 20px 0 0;
+  padding: 34px 33px;
+  color: #4a4a4a;
+}
+
+.card ul li {
+  margin-left: 20px;
+}
+
+/* 홀수 번째 */
+.card:nth-child(odd) {
+  margin-right: 53%;
+}
+
+.card:nth-child(odd) .card-img {
+  margin: -60px 0 0 20px;
+  /* 상 우 하 좌 */
+  top: 0;
+  left: 0;
+}
+
+.card:nth-child(odd) .card-year {
+  text-align: right;
+}
+
+.card:nth-child(odd) .card-name {
+  text-align: right;
+}
+
+.card:nth-child(odd)::after {
+  top: 50%;
+  right: 0;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.card:nth-child(odd) .card-name::after {
+  top: 50%;
+  right: -8.7%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* 짝수 번째 */
+.card:nth-child(even) {
+  margin-left: 53%;
+}
+
+.card:nth-child(even) .card-img {
+  margin: -60px 20px 0 0;
+  top: 0;
+  right: 0;
+}
+
+.card:nth-child(even) .card-year {
+  text-align: left;
+}
+
+.card:nth-child(even) .card-name {
+  text-align: left;
+}
+
+.card:nth-child(even)::after {
+  top: 50%;
+  left: 0;
+  transform: rotate(45deg) translateX(-50%);
+}
+
+.card:nth-child(even) .card-name::after {
+  top: 50%;
+  left: -8.7%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
