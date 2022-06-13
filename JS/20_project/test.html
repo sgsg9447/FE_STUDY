@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        /* height: 100vh; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        width: 100px;
+        min-width: 300px;
+
+        /* 주석을 하나씩 풀어서 조정해보세요. */
+        /* 고정값 px */
+        /* height: 700px; */
+
+        /* 가변값 vh */
+        height: 100vh;
+
+        /* min-height */
+        /* min-height: 300px; */
+        min-height: 300px;
+
+        background-color: palevioletred;
+      }
+
+/* min-height와 height 차이
+
+height : 기본 요소가 가지는 높이값 - 단위에 따라 높이가 변할 수 있음
+vh, vw, % - 퍼센트 개념, 뷰포트가 변하면 값도 변함
+px 단위는 '고정값' - 뷰포트가 변해도 값이 변하지 않음
+
+내가 이해한 min-height
+
+height가 고정값(픽셀)이면 height 값이 "자동으로 줄어들지 않는" min-height 개념이 됨
+height가 가변값(%, vh)일 경우 뷰포트가 줄어들 때 min-height가 적용된 요소의 최소로 줄어들 수 있는 높이값이 됨
+(단, 둘다 가변값일 경우 적용 안됨)
+
+발견한 사실
+
+1. min-height를 사용하려면 height값이 고정값이 아니여야 함
+2. 둘다 고정값일 때 min-height와 height가 동시에 적용될 경우 큰 값이 우선 적용  */
+
+      .inner-box {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+      }
+
+      .score {
+        position: fixed;
+        top: 100px;
+        left: 20px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .boxheight {
+        color: red;
+        background-color: pink;
+      }
+      .boxwidth {
+        color: rgb(89, 86, 86);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="inner-box"></div>
+      <div class="inner-box"></div>
+      <div class="inner-box"></div>
+    </div>
+    <div class="score">
+      <p class="box-counter">box의 수치</p>
+      <p class="boxheight">너비</p>
+      <p class="boxwidth">높이</p>
+    </div>
+    <script>
+      const box = document.querySelector(".box");
+      const ph = document.querySelector(".boxheight");
+      const pw = document.querySelector(".boxwidth");
+
+      window.addEventListener("resize", () => {
+        pw.innerHTML = "box의 너비 : " + box.clientWidth;
+        ph.innerHTML = "box의 높이 : " + box.clientHeight;
+      });
+    </script>
+  </body>
+</html>
