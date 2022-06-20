@@ -1,4 +1,4 @@
-// Remove the minimum
+// Remove the minimum 7kyu
 
 /*
 Task

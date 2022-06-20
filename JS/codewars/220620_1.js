@@ -1,4 +1,4 @@
-// Find the next perfect square!
+// Find the next perfect square! 7kyu
 // Example
 /*
 121 --> 144
