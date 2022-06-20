@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Project</title>
+    <title>Rotating Navigation</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -15,7 +15,70 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Project Starter</h1>
+    <div class="container">
+      <div class="circle-container">
+        <div class="circle">
+          <button id="close">
+            <i class="fas fa-times"></i>
+          </button>
+          <button id="open">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Amazing Article</h1>
+        <small>Florin Pop</small>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+          ad/photo-1615266895738-11f1371cd7e5 quam molestias excepturi eos
+          perferendis explicabo ut perspiciatis unde dolore eligendi asperiores
+          adipisci dolor, magnam harum error voluptatibus ullam! Eum, harum
+          maxime dolore iure cumque molestiae velit architecto magni facere
+          rerum odit debitis error autem sed tempore repellendus laborum at,
+          mollitia iusto maiores. Nesciunt totam architecto nam debitis et
+          delectus commodi similique possimus neque. Ratione repellat tenetur
+          modi quaerat numquam, nam molestias in sequi odit nemo ipsam quis
+          animi vitae asperiores aperiam nihil ullam quas eos sapiente
+          dignissimos earum! Assumenda, esse. Nisi aliquam explicabo earum
+          temporibus illo aspernatur ducimus maiores.
+        </p>
+        <h3>my dog</h3>
+        <img
+          src="https://images.unsplash.com/photo-1615266895738-11f1371cd7e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+          alt="doggy"
+        />
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+          sed pariatur, deleniti ad provident earum itaque in maiores culpa
+          impedit nobis quod inventore voluptate eveniet! Reiciendis, voluptate
+          eaque ex consequuntur deserunt esse animi veniam minus minima ab
+          ducimus fuga dolorum vel accusamus corporis, eligendi commodi modi.
+          Ab, iure natus illum eum veritatis accusantium? Amet reiciendis veniam
+          expedita fuga atque, et dignissimos dicta cum excepturi repudiandae?
+          Voluptatem, blanditiis doloremque illum dolorem accusamus qui rem
+          suscipit voluptatum.
+        </p>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><i class="fas fa-home">Home</i></li>
+        <li><i class="fas fa-user-alt">About</i></li>
+        <li><i class="fas fa-envelope">Contact</i></li>
+      </ul>
+    </nav>
+
     <script src="./script.js"></script>
   </body>
 </html>
+
+<!-- 
+  container 와 nav 로 구성,
+  container에 배경색을 하얀색으로 해주고, 
+  body 배경색을 회색으로 해놓음 
+  container에 show-nav시 회전효과를 줘서 가려진 nav바를 보여줌 
+  #open 클릭이벤트 넣어서 show-nav 클래스 add
+  #close 클릭이벤트 넣어서 show-nav 클래스 remove
+-->
