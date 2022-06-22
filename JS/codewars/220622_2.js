@@ -1,42 +1,28 @@
-// Sum without highest and lowest number 8kyu
+// Is this a triangle? (7kyu)
 
 /*
-Task
-Sum all the numbers of a given array ( cq. list ), 
-except the highest and the lowest element ( by value, not by index! ).
+Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
 
-The highest or lowest element respectively is a single element at each edge, 
-even if there are more than one with the same value.
+(In this case, all triangles must have surface greater than 0 to be accepted).
 
-Mind the input validation.
-
-Example
-{ 6, 2, 1, 8, 10 } => 16
-{ 1, 1, 11, 2, 3 } => 6
+// 세 변의 길이를 알 때 (가장 긴 변의 길이는 다른 두 변의 길이의 합보다 작아야 삼각형)
 */
 
-// max 값 찾고, min 값 찾고 그것아닌 새배열 푸쉬 sum!
-
-// function sumArray(array) {
-//   let maxValue = Math.max.apply(null, array);
-//   let minValue = Math.min.apply(null, array);
-//   console.log(maxValue);
+// 처음 생각한 오답
+// function isTriangle(a, b, c) {
+//   if (a > b || a > c) {
+//     if (a < b + c) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
 // }
 
-// console.log(sumArray([1,2,3]))
-
-function sumArray(array) {
-  if (array == null || array.length <= 2) {
-    return 0;
-  }
-
-  var max = Math.max.apply(Math, array);
-  var min = Math.min.apply(Math, array);
-  var sum = 0;
-
-  for (i = 0; i < array.length; i++) {
-    sum += array[i];
-  }
-
-  return sum - max - min;
+//정답
+function isTriangle(a, b, c) {
+  return a + b > c && a + c > b && c + b > a;
 }
+
+console.log(isTriangle(1, 2, 2)); //true
+console.log(isTriangle(7, 2, 2)); //false
