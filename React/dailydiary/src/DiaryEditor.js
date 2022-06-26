@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-const DiaryEditor = () => {
+const DiaryEditor = ({ onCreate }) => {
   const authorInput = useRef();
   const contentInput = useRef();
   const [state, setState] = useState({
@@ -25,8 +25,13 @@ const DiaryEditor = () => {
       contentInput.current.focus();
       return;
     }
-
+    onCreate(state.author, state.content, state.emotion);
     alert("저장성공");
+    setState({
+      author: "",
+      content: "",
+      emotion: "",
+    });
   };
   return (
     // className 을 파일명과 동일하게 해준 이유는 css 조작 쉽게하기위해!

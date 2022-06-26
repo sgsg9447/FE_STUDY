@@ -15,4 +15,9 @@ const DiaryList = ({ diaryList }) => {
   );
 };
 
+//만약 undefined이면 에러 나니까 defaultProps 생성!
+DiaryList.defaultProps = {
+  diarylist: [],
+};
+
 export default DiaryList;
