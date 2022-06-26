@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
 import DiaryEditor from "./DiaryEditor";
 import DiaryList from "./DiaryList";
@@ -57,10 +57,27 @@ function App() {
     );
   };
 
+  const getDiaryAnalysis = useMemo(() => {
+    console.log("일기 분석 시작");
+    const goodCount = data.filter((it) => it.emotion >= 3).length;
+    const badCount = data.length - goodCount;
+    const goodRatio = (goodCount / data.length) * 100;
+    return {
+      goodCount,
+      badCount,
+      goodRatio,
+    };
+  }, [data.length]); //[data.legnth]가 변화할때만 다시 계산!
+
+  const { goodCount, badCount, goodRatio } = getDiaryAnalysis; //값으로 활용해야함 getDiaryAnalysis는 useMemo()를 사용함으로써 함수로서의 기능 잃게 됨
   return (
     <div className="App">
       {/* <LifeCycle/> */}
       <DiaryEditor onCreate={onCreate} />
+      <div>전체일기 : {data.length}</div>
+      <div>기분 좋은 일기 개수 : {goodCount}</div>
+      <div>기분 나쁜 일기 개수 : {badCount}</div>
+      <div>기분 좋은 일기 비율 : {goodRatio} %</div>
       <DiaryList onEdit={onEdit} onRemove={onRemove} diaryList={data} />
     </div>
   );
