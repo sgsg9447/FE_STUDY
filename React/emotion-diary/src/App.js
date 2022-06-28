@@ -8,12 +8,12 @@ import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
 
 //COMPONENTS
-// import MyButton from "./components/MyButton";
-// import MyHeader from "./components/MyHeader";
+import MyButton from "./components/MyButton";
+import MyHeader from "./components/MyHeader";
 
 const reducer = (state, action) => {
   let newState = [];
-  switch ((action.type)) {
+  switch (action.type) {
     case "INIT": {
       return action.data;
     }
@@ -40,11 +40,44 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDipatchContext = React.createContext();
 
+const dummyData = [
+  {
+    id: 1,
+    emotion: 1,
+    content: "오늘의 일기1번",
+    date: 1656297771240,
+  },
+  {
+    id: 2,
+    emotion: 2,
+    content: "오늘의 일기2번",
+    date: 1656297771241,
+  },
+  {
+    id: 3,
+    emotion: 3,
+    content: "오늘의 일기3번",
+    date: 1656297771242,
+  },
+  {
+    id: 4,
+    emotion: 4,
+    content: "오늘의 일기4번",
+    date: 1656297771243,
+  },
+  {
+    id: 5,
+    emotion: 5,
+    content: "오늘의 일기5번",
+    date: 1656297771245,
+  },
+];
+
 function App() {
   // const env = process.env;
   // env.PUBLIC_URL = env.PUBLIC_URL || "";
-  const [data, dispatch] = useReducer(reducer, []);
-
+  const [data, dispatch] = useReducer(reducer, dummyData);
+  console.log(new Date().getTime());
   const dataId = useRef(0);
   // CREATE
   const onCreate = (date, content, emotion) => {

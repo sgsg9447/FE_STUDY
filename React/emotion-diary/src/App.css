@@ -65,11 +65,11 @@ body {
 
 /* HEADER */
 header {
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #e2e2e2;
-  width: 100%;
 }
 
 header > div {
