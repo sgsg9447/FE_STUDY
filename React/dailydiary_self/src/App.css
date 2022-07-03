@@ -1,0 +1,27 @@
+.Diarypage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Diarypage input {
+  width: 500px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.Diarypage textarea {
+  width: 500px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.Diarypage select {
+  margin-bottom: 10px;
+}
+
+.Diarypage button {
+  width: 500px;
+  cursor: pointer;
+}
