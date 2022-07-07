@@ -1,7 +1,14 @@
+import { RecoilRoot } from "recoil";
+import FontButton from "./components/RecoilExample/FontButton";
+import Text from "./components/RecoilExample/Text";
+
 function App() {
   return (
     <div className="App">
-      <h1>recoil-study</h1>
+      <RecoilRoot>
+        <FontButton />
+        <Text />
+      </RecoilRoot>
     </div>
   );
 }
