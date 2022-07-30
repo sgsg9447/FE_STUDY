@@ -10,7 +10,7 @@ function Routelist() {
       <Routes>
         <Route path="/main" element={<Main />} />
         <Route path="/about" element={<About />} />
-      </Routes>
+        </Routes>
     </BrowserRouter>
   );
 }
