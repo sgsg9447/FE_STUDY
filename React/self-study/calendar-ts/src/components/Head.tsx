@@ -4,11 +4,19 @@ type Props = {
   year: number;
   month: number;
   changeMonth: (value: number) => void;
+  changeYear: (value: number) => void;
 };
 
 const Head = (props: Props) => {
-  const { year, month, changeMonth } = props;
-
+  const { year, month, changeMonth, changeYear } = props;
+  const handleChangePrevButton = () => {
+    if (month < 12) {
+      changeMonth(month - 1);
+    } else if (month <= 0) {
+      changeMonth(month + 12);
+      changeYear(year - 1);
+    }
+  };
   return (
     <HeadContainer>
       <form
@@ -17,7 +25,7 @@ const Head = (props: Props) => {
         }}
       >
         <ButtonContainer>
-          <Button onClick={() => changeMonth(month - 1)}>&lt;</Button>
+          <Button onClick={handleChangePrevButton}>&lt;</Button>
           <HeadTextContainer>
             <HeadText>
               {year}년 {month}월

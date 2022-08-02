@@ -34,6 +34,7 @@ const Main = (props: Props) => {
         year={year}
         month={month}
         changeMonth={changeMonth}
+        changeYear = {changeYear}
       />
       <BodyContainer>
         <Body today={today} month={month} year={year} />
