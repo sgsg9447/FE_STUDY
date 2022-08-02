@@ -4,42 +4,65 @@ type Props = {
   year: number;
   month: number;
   changeMonth: (value: number) => void;
-  goToday: () => void;
 };
 
 const Head = (props: Props) => {
-  const { year, month, goToday, changeMonth } = props;
+  const { year, month, changeMonth } = props;
 
   return (
-    <div>
+    <HeadContainer>
       <form
         onSubmit={(e) => {
           e.preventDefault();
         }}
       >
-        <section>
-          <div>
-            {year}년 {month}월
-          </div>
-          <div>
-            <button onClick={() => changeMonth(month - 1)}>&lt;</button>
-            <button onClick={() => goToday()}>오늘</button>
-            <button onClick={() => changeMonth(month + 1)}>&gt;</button>
-          </div>
-        </section>
-        <Days>
-          {DAY.map((elm, idx) => {
-            return <div key={idx}>{elm}</div>;
-          })}
-        </Days>
+        <ButtonContainer>
+          <Button onClick={() => changeMonth(month - 1)}>&lt;</Button>
+          <HeadTextContainer>
+            <HeadText>
+              {year}년 {month}월
+            </HeadText>
+            <HeadText>
+              {year}년 {month + 1}월
+            </HeadText>
+          </HeadTextContainer>
+          <Button onClick={() => changeMonth(month + 1)}>&gt;</Button>
+        </ButtonContainer>
       </form>
-    </div>
+    </HeadContainer>
   );
 };
 
-const DAY = ["일", "월", "화", "수", "목", "금", "토"];
 export default Head;
 
-const Days = styled.div`
+const HeadContainer = styled.div`
+  padding-left: 20px;
+  padding-right: 20px;
+`;
+
+const HeadTextContainer = styled.div`
   display: flex;
+  width: 100%;
+  height: 5vh;
+`;
+
+const HeadText = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+const Button = styled.button`
+  border: none;
+  background: transparent;
+  &:active {
+    transform: scale(1.2);
+  }
 `;
