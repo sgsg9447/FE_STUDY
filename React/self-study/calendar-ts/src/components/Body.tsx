@@ -45,7 +45,7 @@ const Body = ({ today, month, year }: Props) => {
     }
     //현재 날짜
     let TD = Array.from(Array.from(Array(NextDate + 1)).keys()).slice(1);
-    console.log(PVLD.concat(TD, TLD));
+    // console.log(PVLD.concat(TD, TLD));
     //PVLD = 이전달의 남은날짜 + 이번달의 날짜 + 다음달의 올 날짜
     return PVLD.concat(TD, TLD);
   };
@@ -56,34 +56,47 @@ const Body = ({ today, month, year }: Props) => {
   const DAY = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
-    <BodyContentContainer>
-      <Days>
-        {DAY.map((elm, idx) => {
-          return <div key={idx}>{elm}</div>;
-        })}
-      </Days>
-      {totalDate.map((date, index) => (
-        <Dates
-          key={index}
-          index={index}
-          currentMonthFirstDate={currentMonthFirstDate}
-          nextMonthFirstDate={nextMonthFirstDate}
-          elm={date}
-          findToday={findToday === index && month === currentMonth}
-          month={month}
-          year={year}
-        ></Dates>
-      ))}
-    </BodyContentContainer>
+    <Container>
+      <BodyContentContainer>
+        <Days>
+          {DAY.map((elm, idx) => {
+            return <div key={idx}>{elm}</div>;
+          })}
+        </Days>
+
+        {totalDate.map((date, index) => (
+          <Dates
+            key={index}
+            index={index}
+            currentMonthFirstDate={currentMonthFirstDate}
+            nextMonthFirstDate={nextMonthFirstDate}
+            elm={date}
+            findToday={findToday === index && month === currentMonth}
+            month={month}
+            year={year}
+          ></Dates>
+        ))}
+      </BodyContentContainer>
+    </Container>
   );
 };
 
 export default Body;
 
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
 const BodyContentContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   border: 1px solid black;
+  margin: 30px;
+  position: relative;
+  box-sizing: border-box;
+  /* width: 500px; */
+  height: 500px;
 `;
 
 const Days = styled.div`

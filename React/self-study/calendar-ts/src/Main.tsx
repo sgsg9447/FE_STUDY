@@ -12,20 +12,20 @@ const Main = (props: Props) => {
 
   const [month, setMonth] = React.useState(MONTH);
   const [year, setYear] = React.useState(YEAR);
-  
-  const [today, setToday] = useState(0);
-  const changeYear = (value:number)=>{
-    setYear(value)
-  }
-  // const goToday = () => {
-  //   let TODAY = new Date().getDate();
-  //   let goMonth = new Date().getMonth() + 1;
-  //   setMonth(goMonth);
-  //   setToday(TODAY);
-  // };
 
-  const changeMonth = (value: number) => {
-    setMonth(value);
+  const [today, setToday] = useState(0);
+
+  const handleChangePrevButton = () => {
+    const currentDate = new Date(`${year}-${month}`);
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    setYear(currentDate.getFullYear());
+    setMonth(currentDate.getMonth() + 1);
+  };
+  const handleChangeNextButton = () => {
+    const currentDate = new Date(`${year}-${month}`);
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    setYear(currentDate.getFullYear());
+    setMonth(currentDate.getMonth() + 1);
   };
 
   return (
@@ -33,8 +33,8 @@ const Main = (props: Props) => {
       <Head
         year={year}
         month={month}
-        changeMonth={changeMonth}
-        changeYear = {changeYear}
+        handleChangePrevButton={handleChangePrevButton}
+        handleChangeNextButton={handleChangeNextButton}
       />
       <BodyContainer>
         <Body today={today} month={month} year={year} />

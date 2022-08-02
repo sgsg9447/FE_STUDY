@@ -3,20 +3,15 @@ import styled from "styled-components";
 type Props = {
   year: number;
   month: number;
-  changeMonth: (value: number) => void;
-  changeYear: (value: number) => void;
+  handleChangePrevButton: () => void;
+  handleChangeNextButton: () => void;
 };
 
 const Head = (props: Props) => {
-  const { year, month, changeMonth, changeYear } = props;
-  const handleChangePrevButton = () => {
-    if (month < 12) {
-      changeMonth(month - 1);
-    } else if (month <= 0) {
-      changeMonth(month + 12);
-      changeYear(year - 1);
-    }
-  };
+  const { year, month, handleChangePrevButton, handleChangeNextButton } = props;
+  const nextDate = new Date(`${year}-${month}`);
+  nextDate.setMonth(nextDate.getMonth() + 1);
+
   return (
     <HeadContainer>
       <form
@@ -31,10 +26,10 @@ const Head = (props: Props) => {
               {year}년 {month}월
             </HeadText>
             <HeadText>
-              {year}년 {month + 1}월
+              {nextDate.getFullYear()}년 {nextDate.getMonth() + 1}월
             </HeadText>
           </HeadTextContainer>
-          <Button onClick={() => changeMonth(month + 1)}>&gt;</Button>
+          <Button onClick={handleChangeNextButton}>&gt;</Button>
         </ButtonContainer>
       </form>
     </HeadContainer>

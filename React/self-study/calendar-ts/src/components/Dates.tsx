@@ -20,10 +20,10 @@ const Dates = ({
   month,
   year,
 }: Props) => {
+  const DAY = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
     <DatesContainer>
-     
       <DateNum
         index={index}
         currentMonthFirstDate={currentMonthFirstDate}
@@ -40,13 +40,14 @@ export default Dates;
 
 const DatesContainer = styled.li`
   position: relative;
-  padding: 0 0.6vw;
   width: calc(100% / 7);
+  padding: 0 0.6vw;
   height: 9vw;
   text-align: right;
   border-bottom: 1px solid #e4e3e6;
   border-left: 1px solid #e4e3e6;
   list-style: none;
+  box-sizing: border-box;
 `;
 
 const DateNum = styled.div<{
@@ -56,13 +57,13 @@ const DateNum = styled.div<{
   findToday: boolean;
 }>`
   padding: 1vw 0.9vw 0 0;
-  ${(props) => props.index < props.currentMonthFirstDate && `color: #fff;`};
+  ${(props) => props.index < props.currentMonthFirstDate && `display:none`};
 
   ${(props) =>
     props.nextMonthFirstDate > 0 &&
     props.index > props.nextMonthFirstDate - 1 &&
     `
-    color: #fff;
+    display:none
   `};
 `;
 
@@ -79,3 +80,7 @@ const TodayCSS = styled.span<{ findToday: boolean }>`
  `}
 `;
 
+const Days = styled.div`
+  display: flex;
+  color: #969696;
+`;
