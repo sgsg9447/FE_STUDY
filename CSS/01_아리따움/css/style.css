@@ -1,0 +1,44 @@
+.wrapper {
+  margin: 0 auto;
+  width: 1600px;
+  /* background-color: yellow; */
+}
+
+/* common */
+
+.inner {
+  width: 1200px;
+  /* background-color: pink; */
+  margin: 0 auto;
+}
+.sr_only {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+/* main */
+
+.nav {
+  padding: 32px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
