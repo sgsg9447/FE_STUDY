@@ -5,7 +5,7 @@ import Head from "./components/Head";
 
 type Props = {};
 
-const Main = (props: Props) => {
+const Calendar = (props: Props) => {
   let DATE = new Date();
   const YEAR = DATE.getFullYear();
   const MONTH = DATE.getMonth() + 1;
@@ -45,7 +45,7 @@ const Main = (props: Props) => {
   );
 };
 
-export default Main;
+export default Calendar;
 
 const BodyContainer = styled.div`
   display: flex;

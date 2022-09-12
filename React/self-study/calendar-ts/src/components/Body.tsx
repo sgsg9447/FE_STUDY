@@ -85,7 +85,8 @@ export default Body;
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  position: relative;
 `;
 
 const BodyContentContainer = styled.div`
@@ -93,10 +94,8 @@ const BodyContentContainer = styled.div`
   flex-flow: row wrap;
   border: 1px solid black;
   margin: 30px;
-  position: relative;
   box-sizing: border-box;
-  /* width: 500px; */
-  height: 500px;
+  height: 100vh;
 `;
 
 const Days = styled.div`

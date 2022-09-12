@@ -1,6 +1,6 @@
 import React from "react";
 import GlobalStyle from "./components/styles/GlobalStyle";
-import Main from "./Main";
+import Main from "./Calendar";
 
 function App() {
   return (
