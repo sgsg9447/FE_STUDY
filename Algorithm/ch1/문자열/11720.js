@@ -5,13 +5,14 @@ let fs = require("fs");
 let input = fs.readFileSync("input.txt").toString().split("\n");
 
 let n = Number(input[0]);
-
 let string = input[1];
 
-let answer = 0;
+console.log(n);
+console.log(string);
 
-for (let x of string) {
-  answer += Number(x);
+let sum = 0;
+for (let s of string) {
+  sum += Number(s);
 }
 
-console.log(answer);
+console.log(sum);

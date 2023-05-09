@@ -7,11 +7,14 @@ let input = fs.readFileSync("input.txt").toString().split("\n");
 
 let testCase = Number(input[0]);
 
-for (let i = 1; i <= testCase; i++) {
-  let [r, s] = input[i].split(" ");
-  let answer = "";
-  for (let j = 0; j <= s.length; j++) {
-    answer += s.charAt(j).repeat(r);
+for (let t = 1; t <= testCase; t++) {
+  let data = input[t];
+  let n = data.split(" ")[0];
+  let string = data.split(" ")[1];
+
+  let res = "";
+  for (s of string) {
+    res += s.repeat(n);
   }
-  console.log(answer);
+  console.log(res);
 }
